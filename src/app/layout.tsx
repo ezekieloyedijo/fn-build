@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Archivo, Manrope } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const sans = Manrope({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Archivo({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 

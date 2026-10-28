@@ -57,17 +57,17 @@ npm start
 ## Deploying to Vercel
 
 1. **Push to GitHub** and import the repo in the [Vercel dashboard](https://vercel.com/new).
-2. **Database**: provision a Postgres instance (e.g. [Neon](https://neon.tech)) and copy its connection string.
+2. **Database**: in the Vercel project → Storage tab, create a Neon Postgres database and connect it to the project — this auto-injects `DATABASE_URL` (pooled) and `DATABASE_URL_UNPOOLED` (direct). If you create the database on [neon.tech](https://neon.tech) instead, copy both connection strings from the Neon dashboard ("Connection pooling" on for `DATABASE_URL`, off for `DATABASE_URL_UNPOOLED`) and add them yourself.
 3. **Blob storage**: in the Vercel project → Storage tab, create a Blob store and connect it to the project — this auto-injects `BLOB_READ_WRITE_TOKEN`.
-4. **Environment variables** (Project Settings → Environment Variables): set `DATABASE_URL`, `NEXTAUTH_URL` (your production domain, e.g. `https://fnbuild.vercel.app`), `NEXTAUTH_SECRET`, `SMTP_*`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_PHONE_NUMBER`.
+4. **Environment variables** (Project Settings → Environment Variables): set `DATABASE_URL` and `DATABASE_URL_UNPOOLED` (if not injected by the Neon integration), `NEXTAUTH_URL` (your production domain, e.g. `https://fnbuild.vercel.app`), `NEXTAUTH_SECRET`, `SMTP_*`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_PHONE_NUMBER`.
 5. **Deploy** — Vercel runs `prisma generate && next build` automatically per `package.json`.
 6. **Apply migrations** once, from your machine, pointed at the production database:
    ```bash
-   DATABASE_URL="<production-connection-string>" npm run prisma:deploy
+   DATABASE_URL="<pooled-url>" DATABASE_URL_UNPOOLED="<direct-url>" npm run prisma:deploy
    ```
 7. **Seed the admin user** (and optional demo content) the same way:
    ```bash
-   DATABASE_URL="<production-connection-string>" npm run seed
+   DATABASE_URL="<pooled-url>" DATABASE_URL_UNPOOLED="<direct-url>" npm run seed
    ```
 8. Visit the deployed URL and confirm `/login` and an admin image upload both work.
 
