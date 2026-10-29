@@ -9,7 +9,7 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 export function FloatingCta() {
   const [open, setOpen] = useState(false);
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "15551234567";
-  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+15551234567";
+  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER || "+234 803 897 5028";
 
   const actions = [
     {

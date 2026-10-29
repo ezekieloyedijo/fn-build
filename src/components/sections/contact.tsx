@@ -65,7 +65,7 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-semibold text-foreground">Head Office</p>
-                <p className="text-sm text-muted">14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+                <p className="text-sm text-muted">1, Abe-Koko Shopping Complex, Abe-Koko Junction, Ogooluwa/Africa, Osogbo, Osun State</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -74,7 +74,7 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-semibold text-foreground">Call Us</p>
-                <p className="text-sm text-muted">{process.env.NEXT_PUBLIC_PHONE_NUMBER || "+234 801 234 5678"}</p>
+                <p className="text-sm text-muted">{process.env.NEXT_PUBLIC_PHONE_NUMBER || "+234 803 897 5028"}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">

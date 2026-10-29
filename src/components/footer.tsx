@@ -79,11 +79,11 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-steel-400">
             <li className="flex items-start gap-2.5">
               <FiMapPin className="mt-0.5 shrink-0 text-primary-400" />
-              14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
+              1, Abe-Koko Shopping Complex, Abe-Koko Junction, Ogooluwa/Africa, Osogbo, Osun State
             </li>
             <li className="flex items-center gap-2.5">
               <FiPhone className="shrink-0 text-primary-400" />
-              {process.env.NEXT_PUBLIC_PHONE_NUMBER || "+234 801 234 5678"}
+              {process.env.NEXT_PUBLIC_PHONE_NUMBER || "+234 803 897 5028"}
             </li>
             <li className="flex items-center gap-2.5">
               <FiMail className="shrink-0 text-primary-400" />
